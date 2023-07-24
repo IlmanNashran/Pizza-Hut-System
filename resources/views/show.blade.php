@@ -57,7 +57,7 @@
 
                     <div class="card-body">
 
-
+                 
                         <img src="{{ Storage::url($pizza->image) }}" class="img-thumbnail" style="width: 100%;">
                         <p>
                         <h3>{{ $pizza->name }}</h3>

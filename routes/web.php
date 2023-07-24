@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -22,7 +20,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('frontpage');
 Route::get('/pizza/{id}', [App\Http\Controllers\FrontendController::class, 'show'])->name('pizza.show');
 Route::post('/order/store', [App\Http\Controllers\FrontendController::class, 'store'])->name('order.store');
-
 
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
 
@@ -40,9 +37,5 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']],function(){
   //display all customers
   Route::get('/customers', [App\Http\Controllers\UserOrderController::class, 'customers'])->name('customers');
 
-
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
