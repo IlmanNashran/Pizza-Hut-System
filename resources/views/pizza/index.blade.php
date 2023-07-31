@@ -50,7 +50,8 @@
                                     @foreach ($pizzas as $key => $pizza)
                                         <tr>
                                             <th scope="row">{{ $key + 1 }}</th>
-                                            <td><img src="{{ Storage::url($pizza->image) }}" width="80"></td>
+                                            <td><img src="{{ asset('storage/pizza/' . $pizza->image) }}" alt="Pizza Image"></td>
+
                                             <td>{{ $pizza->name }}</td>
                                             <td>{{ $pizza->description }}</td>
                                             <td>{{ $pizza->category }}</td>
